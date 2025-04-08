@@ -1,0 +1,759 @@
+/* Estilos generales */
+
+
+:root {
+  --fuentePrincipal: 'Sofadi One', system-ui;
+  --fuenteSecundaria: "Open Sans", sans-serif;
+  --fuentePesada: 800;
+  --fuenteIntermedia: 500;
+  --fuenteLigera: 300;
+
+  --obsucuro: #0D0D0D;
+  --obscuroTransparencia: rgb( 0 0 0 / 50% );
+  --blanco: #FFFFFF;
+  --semiBlanco: #F2F2F2;
+  --grisObscuro: #434746;
+  --primario: #592202;
+  --secundario: #A65F21;
+  --constraste: #e3974b;
+  --rojo: #e00707;
+}
+
+.negrita{
+  font-weight: 800;
+}
+.centrar-texto {
+  
+  text-align: center;
+
+}
+
+.fuenteLigera{
+  font-weight: 500;
+}
+
+.carrito {
+  background-color: transparent;
+  border: none;
+  max-width: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.carrito #carrito {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  background-color: white;
+  z-index: 1200; /* Para asegurarse de que esté sobre la navegación */
+}
+
+.carrito:hover #carrito {
+  display: block;
+  background-color: white;
+  padding: 10px;
+  height: fit-content;
+  min-width: 350px;
+  width: fit-content;
+  top: -5;
+  right: 0;
+  left: unset;
+  margin-left: unset;
+  margin-right: unset;
+
+}
+
+#carrito img {
+  width: 50px;
+}
+/*Carrito*/
+
+/*Boton del carrito*/
+.boton__pequeno {
+  display: block;
+  font-family: var(--fuenteSecundaria);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 1.4rem;
+  font-weight: var(--fuenteIntermedia);
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.restarBoton{
+  background-color: var(--constraste);
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.sumarBoton{
+  background-color: var(--constraste);
+  margin-left: 4px;
+  border-radius: 50%;
+}
+
+.eliminarBoton{
+  background-color: var(--rojo);
+  border-radius: 50%;
+}
+
+/*fin boton carrito*/
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+h2 {
+  
+  text-align: center; /* Centra el texto dentro del h2 */
+  line-height: 1.2; /* Espaciado entre líneas */
+}
+
+p {
+  margin-bottom: 20px; 
+}
+
+
+/* Sección hero con imagen de fondo */
+.hero {
+  background-image: url(tablet.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Ajusta la altura según lo que desees */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* Asegura que los elementos absolutamente 
+  posicionados se alineen con este contenedor */
+}
+
+.hero::after {
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.5); /* Sombra negra con transparencia */
+  z-index: 1; /* Asegura que esté sobre la imagen */
+  pointer-events: none; /* Permite interactuar con el contenido debajo */
+}
+
+.contenido-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Para asegurar que el texto esté por encima de la sombra */
+  z-index: 2; /* Asegura que el contenido esté sobre la sombra */
+  color: white; /* Cambia el color del texto a blanco para mayor contraste */
+  
+}
+
+header {
+  position: relative;
+  z-index: 1000; /* Asegura que el header esté sobre otros elementos */
+}
+
+.header-left .titulo {
+  font-size: 4rem;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+  font-size: 2rem;
+  
+}
+
+nav {
+  position: relative;
+  z-index: 900; /* Ajusta para que esté debajo del header */
+}
+
+.navegacion-principal a {
+  color: white;
+  text-decoration: none;
+  font-size: 2 rem;
+}
+
+
+
+.navegacion-principal{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color:#084168;
+
+}
+
+.subtitulo {
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  position: relative; 
+  z-index: 2;
+}
+
+.subtitulo h2 {
+  font-size: 3 rem;
+}
+
+.subtitulo p{
+  font-size: 2 rem;
+}
+
+.subtitulo2{
+  font-size: 1.2rem;
+  text-align: center; 
+}
+
+.footer {
+  background-color: #2c3e50; /* Un fondo oscuro para contraste */
+  color: #ecf0f1; /* Texto claro para buena legibilidad */
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.footer p:hover {
+  color: #e67e22; /* Un pequeño efecto hover para darle estilo */
+}
+
+
+/* Sección principal sin imagen de fondo */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+.container-left {
+  width: 55%;
+}
+.container-right {
+  width: 35%;
+}
+
+.container-left h3, .container-right h3 {
+  font-size: 1.8rem;
+}
+
+.container-left p, .container-right p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn {
+  display: block;
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+
+/* Estilos para los paquetes fotográficos */
+.package {
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.package h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.package p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.btn-paquete {
+  display: block;
+  background-color: #ff4500;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.btn-paquete:hover {
+  background-color: #e03d00;
+}
+
+/* Ajustes adicionales para las imágenes en la sección izquierda */
+.container-left img {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+
+/*Datos para formulario*/
+.formulario{
+  padding: 20px;
+  text-align: center;
+}
+
+.form-style {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.campo {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn-submit {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+
+/*paquetes 123*/
+.package-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.package-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.package-img {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.package-details {
+  flex: 1;
+  text-align: left;
+}
+
+.btn-interest {
+  background-color: #e67e22;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-interest:hover {
+  background-color: #d35400;
+}
+/*paquetes */
+.paquete-basico {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.paquete-basico h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-paquete p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+/* Estilo de cada sección */
+.seccion {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hacer que las secciones sean más responsivas */
+@media (max-width: 768px) {
+  .seccion {
+      flex: 1 1 100%;
+  }
+}
+/*Eventos*/
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+}
+
+.box h2 {
+  color: #333;
+}
+
+.box p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/*Entradas*/
+
+ ul {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.entrada {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos adicionales para diseño */
+.highlight {
+  background-color: #ecf0f1;
+  padding: 10px;
+  border-left: 4px solid #2980b9;
+  margin-bottom: 20px;
+}
+.image-container img {
+  width: 50%;
+  height: 50;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+    /* Estilo para los contenedores de cada tema */
+    .photo-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      margin-bottom: 40px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para la imagen */
+  .photo-section img {
+      /* width: 250px;
+      height: auto; */
+      margin-right: 20px;
+      border-radius: 8px;
+  }
+
+  .info__imagen{
+      padding: 10px;
+  }
+
+/*Parametros escenciales*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*1rem = 10px*/
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
+
+body{
+  font-family: var(--fuentePrincipal);
+  font-size: 1.6rem;
+  line-height: 2;
+  margin: 0;
+}
+
+.contenedor{
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  padding: .3rem;
+  border-radius: .5rem;
+}
+.navegacion a:hover{
+  background-color: var(--obscuroTransparencia);
+}
+
+h1,h2,h3,h4 {
+  font-family: var(--fuenteSecundaria);
+}
+h1{
+  font-size: 4.8rem;
+}
+h2{
+  font-size: 4rem;
+}
+h3{
+  font-size: 3.2rem;
+}
+h4{
+  font-size: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.centrar-texto{
+  text-align: center;
+  color: #000000;
+}
+
+/* fin paramtros iniciales */
+
+
+/*Contenido principal*/
+
+@media (min-width:768px){
+  .contenido-principal{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 4rem;
+  }
+}
+
+.entrada{
+  border-bottom: 1px solid var(--grisObscuro);
+  margin-bottom: 3rem;
+}
+
+.entrada:last-of-type{
+  border: none;
+  margin-bottom: 0;
+}
+
+.boton {
+  display: block;
+  font-family: var(--fuenteSecundaria);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: var(--fuentePesada);
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.boton:hover{
+  cursor: pointer;
+}
+
+@media (min-width: 768px){
+  .boton {
+      display: inline-block;
+  }
+}
+
+.boton--primario{
+  background-color: var(--obsucuro);
+}
+
+.boton--secundario{
+  background-color: var(--secundario);
+}
+
+/* aside styles */
+.paquetes{
+  list-style: none;
+}
+
+.paquetes__titulo{
+  border-bottom: 1px solid var(--grisObscuro);
+  margin-bottom: 2rem;
+  
+}
+
+.paquetes__titulo:last-of-type{
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.paquetes--titulo__etiqueta{
+  font-weight: var(--fuentePesada);
+  font-size: 1.8rem;
+}
+
+.paquetes--titulo__etiqueta p{
+  font-weight: var(--fuentePesada);
+  font-size: 1.8rem;
+}
+
+.paquetes--titulo__info{
+  font-weight: var(--fuenteLigera);
+  font-size: 1.8rem;
+}
+/* fin aside */
+
+/*fin Contenido principal*/
+
+
+/* footer */
+.footer{
+  background-color: var(--obsucuro);
+  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .navegacion--secundaria{
+      display: flex;
+      gap: 2rem;
+  }
+}
+
+.navegacion--secundaria__enlace{
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--blanco);
+}
+
+.navegacion--secundaria__enlace:hover{
+  color: var(--constraste);
+}
+
+
+.footer h1{
+  font-size: 2rem;
+}
+
+.footer a:hover{
+  color: var(--constraste);
+}
+
+/* footer */
+
+
+
+
+
+header {
+  position: relative;
+  z-index: 1000; /* Asegura que el header tenga prioridad sobre otros elementos */
+}
+
+nav {
+  display: flex; /* O un estilo apropiado para tu diseño */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 900;
+}
+
+.carrito {
+  position: relative;
+  z-index: 1100; /* Asegura que el carrito esté sobre el header */
+}
+
+.carrito #carrito {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%; /* Asegura que el carrito se despliegue debajo del ícono */
+  z-index: 1200; /* Mayor que el header y otros elementos */
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: var(--blanco);
+}
+
+.carrito:hover #carrito {
+  display: block;
+}
